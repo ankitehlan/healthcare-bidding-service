@@ -1,4 +1,4 @@
-# healthcare-bid-service
+# healthcare-bidding-service
 
 # AI-Powered Healthcare Bidding Microservice
 
@@ -22,7 +22,7 @@ Includes a **mock Retrieval-Augmented Generation (RAG)** system, a **React front
 
 ## 🗂️ Project Structure
 
-healthcare-bid-service/
+healthcare-bidding-service/
 ├── Dockerfile
 ├── README.md
 ├── requirements.txt
@@ -49,7 +49,7 @@ healthcare-bid-service/
 
 ```bash
 git clone <your-repo-url>
-cd healthcare-bid-service
+cd healthcare-bidding-service
 
 ### 2. Backend Setup (Local)
 Create a virtual environment and install dependencies:
@@ -74,10 +74,26 @@ npm start
 
 Frontend will run at: http://localhost:3000
 
-### Docker Setup (Pending Network Fix)
+### Docker Setup
 
-docker build -t healthcare-bid-service .
-docker run -p 8000:8000 healthcare-bid-service
+## 🐳 Running with Docker (Colima on macOS)
+
+On macOS, Docker Desktop can sometimes have networking issues.  
+We recommend using [Colima](https://github.com/abiosoft/colima) for a lightweight Docker runtime.
+
+### 1. Install Colima
+
+```bash
+brew install colima
+
+colima start --cpu 4 --memory 8
+
+docker build -t healthcare-bidding-service .
+
+docker run -p 8000:8000 healthcare-bidding-service
+
+backend will now be available at 
+http://localhost:8000/docs
 
 ### 🧪 Run Tests
 pytest -v
