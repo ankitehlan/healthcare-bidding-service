@@ -50,6 +50,7 @@ healthcare-bidding-service/
 ```bash
 git clone <your-repo-url>
 cd healthcare-bidding-service
+```
 
 ### 2. Backend Setup (Local)
 Create a virtual environment and install dependencies:
@@ -68,11 +69,19 @@ Docs: http://localhost:8000/docs
 
 ### Frontend Setup (Local)
 
+```bash
 cd frontend
 npm install
 npm start
+```
 
 Frontend will run at: http://localhost:3000
+
+## 📸 Frontend Preview
+
+Here’s what the bid submission UI looks like:
+
+![Frontend Screenshot](./frontend/docs/healthcare-bidding-service.png)
 
 ### Docker Setup
 
@@ -85,12 +94,10 @@ We recommend using [Colima](https://github.com/abiosoft/colima) for a lightweigh
 
 ```bash
 brew install colima
-
 colima start --cpu 4 --memory 8
-
 docker build -t healthcare-bidding-service .
-
 docker run -p 8000:8000 healthcare-bidding-service
+```
 
 backend will now be available at 
 http://localhost:8000/docs
@@ -100,6 +107,7 @@ pytest -v
 
 ## API Example
 
+```bash
 Request
 POST /bid-response/
 {
